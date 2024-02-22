@@ -5,10 +5,10 @@ import { navLinks } from "../../../../shared/constant/navLinks.constant";
 const Navbar = () => {
   return (
     <div className="drawer">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle " />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-200">
+        <div className="w-full navbar bg-sky-200  shadow-md shadow-gray-500 mb-1">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
