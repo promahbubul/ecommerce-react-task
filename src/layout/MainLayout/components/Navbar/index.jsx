@@ -1,8 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
 import { logo } from "../../../../assets/images/images";
 import { navLinks } from "../../../../shared/constant/navLinks.constant";
+import { useSelector } from "react-redux";
+// import ""
 
 const Navbar = () => {
+  const { cart } = useSelector(state=>state.shop)
+
+  console.log(cart);
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle " />
@@ -38,11 +43,12 @@ const Navbar = () => {
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
-              {navLinks.map((item) => (
-                <li>
+              {navLinks.map((item, index) => (
+                <li key={index}>
                   <Link to={item.path}>{item.title}</Link>
                 </li>
               ))}
+              <li className="mt-2">Bag | {cart.length}</li>
             </ul>
           </div>
         </div>
@@ -57,8 +63,8 @@ const Navbar = () => {
         ></label>
         <ul className="menu p-4 w-80 min-h-full bg-base-200">
           {/* Sidebar content here */}
-          {navLinks.map((item) => (
-            <li>
+          {navLinks.map((item, index) => (
+            <li key={index}>
               <Link to={item.path}>{item.title}</Link>
             </li>
           ))}

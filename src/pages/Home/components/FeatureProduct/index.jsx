@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "../../../../shared/Card";
+import { useSelector } from "react-redux"
 
 const FeatreProducts = () => {
   const [featureProducts, setFeatureProducts] = useState([]);
+  const { products } = useSelector(state=>state.shop)
 
   useEffect(() => {
     fetch("/featureProduct.json")
@@ -16,11 +18,11 @@ const FeatreProducts = () => {
         Feature Products
       </h2>
       <div className="mt-5 grid  gap-10 grid-cols-12">
-        {featureProducts.map((product) => (
+        {products?.slice(5, 11).map((product, index) => (
           <Card
-            key={product?.product_id}
+            key={index}
             img={product?.image}
-            name={product?.name}
+            name={product?.title}
             description={product?.description}
             price={product?.price}
           />
