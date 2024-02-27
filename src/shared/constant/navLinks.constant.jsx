@@ -6,9 +6,5 @@ export const navLinks = [
   {
     path: "/products",
     title: "Products",
-  },
-  {
-    path: "/cart",
-    title: "Cart",
-  },
+  }
 ];

@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 import { useSelector } from "react-redux";
 
 const App = () => {
@@ -16,6 +18,8 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="products" element={<Products />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="signin" element={<SignIn />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -2,12 +2,13 @@ import { Link, Outlet } from "react-router-dom";
 import { logo } from "../../../../assets/images/images";
 import { navLinks } from "../../../../shared/constant/navLinks.constant";
 import { useSelector } from "react-redux";
+import { IoBagOutline } from "react-icons/io5"
+
 // import ""
 
 const Navbar = () => {
   const { cart } = useSelector(state=>state.shop)
 
-  console.log(cart);
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle " />
@@ -48,7 +49,18 @@ const Navbar = () => {
                   <Link to={item.path}>{item.title}</Link>
                 </li>
               ))}
-              <li className="mt-2">Bag | {cart.length}</li>
+              <li>
+                <Link to="/cart" className="relative">
+                  <span>Cart</span>
+                  <span className="absolute top-0 right-0">{cart.length}</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/signin">Signin</Link>
+              </li>
+              <li>
+                <Link to="/signup">Signup</Link>
+              </li>
             </ul>
           </div>
         </div>

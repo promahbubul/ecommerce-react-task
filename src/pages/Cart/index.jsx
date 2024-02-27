@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const Cart = () => {
   const { cart } = useSelector(state=>state.shop)
-  
+  console.log(cart);
   return (
     <div className="h-screen">
       <h2 className="max-w-5xl mx-auto text-4xl font-bold my-5 bg-slate-900 text-white py-3 px-5 rounded-md">
@@ -17,7 +17,9 @@ const Cart = () => {
         <div className=" h-full  overflow-y-auto">
           {cart?.map((item, index)=> <Item 
             key={index}
-            
+            name={item.name}
+            image={item.image}
+            price={item.price}
           />)}
         </div>
       </div>
